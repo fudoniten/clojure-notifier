@@ -4,6 +4,7 @@
         org.clojure/clojure { :mvn/version "1.11.1" }
         com.github.hypfvieh/dbus-java-core { :mvn/version "4.3.0" }
         com.github.hypfvieh/dbus-java-transport-native-unixsocket { :mvn/version "4.3.0" }
+        org.slf4j/slf4j-api { :mvn/version "1.7.36" }
         }
  :aliases {
            :install {

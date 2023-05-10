@@ -19,6 +19,7 @@
           notifier = helpers.packages."${system}".mkClojureLib {
             name = "org.fudo/notifier";
             src = ./.;
+            buildCommand = "clojure -T:build uberjar";
           };
         };
 
