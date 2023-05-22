@@ -27,14 +27,14 @@
       (throw (ex-info (format "missing required argument: %s" arg)
                       {:arg arg}))))
   (let [urgency-lvl (get urgencies urgency)]
-    (when (nil? urgency-lvl)
+    (if (nil? urgency-lvl)
       (throw (ex-info (format "bad urgency level: %s" urgency) {}))
-    (.Notify bus
-             app
-             (UInt32. replace-id)
-             icon
-             summary
-             body
-             actions
-             { "urgency" urgency-lvl }
-             timeout))))
+      (.Notify bus
+               app
+               (UInt32. replace-id)
+               icon
+               summary
+               body
+               actions
+               { "urgency" urgency-lvl }
+               timeout))))
