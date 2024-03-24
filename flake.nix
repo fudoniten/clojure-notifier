@@ -2,11 +2,10 @@
   description = "Library for sending DBus notifications.";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-22.11";
+    nixpkgs.url = "nixpkgs/nixos-23.11";
     utils.url = "github:numtide/flake-utils";
     helpers = {
-      url =
-        "git+https://git.fudo.org/fudo-public/nix-helpers.git?ref=with-deps";
+      url = "git+https://fudo.dev/public/nix-helpers.git?ref=with-deps";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
