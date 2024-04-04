@@ -5,7 +5,7 @@
     nixpkgs.url = "nixpkgs/nixos-23.11";
     utils.url = "github:numtide/flake-utils";
     helpers = {
-      url = "git+https://fudo.dev/public/nix-helpers.git?ref=with-deps";
+      url = "git+https://fudo.dev/public/nix-helpers.git";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -19,7 +19,8 @@
           notifier = helpers.packages."${system}".mkClojureLib {
             name = "org.fudo/notifier";
             src = ./.;
-            buildCommand = "clojure -T:build uberjar";
+            clojure-src-dirs = [ "src/clj" ];
+            java-src-dirs = [ "src/java" ];
           };
         };
 
@@ -27,7 +28,7 @@
           default = updateDeps;
           updateDeps = pkgs.mkShell {
             buildInputs = with helpers.packages."${system}";
-              [ updateClojureDeps ];
+              [ (updateClojureDeps { }) ];
           };
         };
       });
