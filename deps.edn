@@ -1,22 +1,22 @@
 {
  :paths ["src/clj" "src/java"]
  :deps {
-        org.clojure/clojure { :mvn/version "1.11.1" }
-        com.github.hypfvieh/dbus-java-core { :mvn/version "4.3.0" }
-        com.github.hypfvieh/dbus-java-transport-native-unixsocket { :mvn/version "4.3.0" }
+        org.clojure/clojure { :mvn/version "1.12.3" }
+        com.github.hypfvieh/dbus-java-core { :mvn/version "4.3.2" }
+        com.github.hypfvieh/dbus-java-transport-native-unixsocket { :mvn/version "4.3.2" }
         org.slf4j/slf4j-api { :mvn/version "1.7.36" }
         }
  :aliases {
            :install {
                      :extra-deps {
-                                  io.github.clojure/tools.build {:mvn/version "0.9.4"}
+                                  io.github.clojure/tools.build {:mvn/version "0.10.12"}
                                   }
                      :ns-default build
                      :exec-fn install
                      }
            :build {
                    :extra-deps {
-                                io.github.clojure/tools.build {:mvn/version "0.9.4"}
+                                io.github.clojure/tools.build {:mvn/version "0.10.12"}
                                 }
                    :ns-default build
                    :exec-fn uberjar
