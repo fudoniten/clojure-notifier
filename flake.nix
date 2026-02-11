@@ -16,7 +16,7 @@
       in {
         packages = rec {
           default = notifier;
-          notifier = helpers.packages."${system}".mkClojureLib {
+          notifier = helpers.legacyPackages."${system}".mkClojureLib {
             name = "org.fudo/notifier";
             src = ./.;
             clojure-src-dirs = [ "src/clj" ];
@@ -27,7 +27,7 @@
         devShells = rec {
           default = updateDeps;
           updateDeps = pkgs.mkShell {
-            buildInputs = with helpers.packages."${system}";
+            buildInputs = with helpers.legacyPackages."${system}";
               [ (updateClojureDeps { }) ];
           };
         };
